@@ -1,20 +1,19 @@
 /* style.css */
 @font-face {
     font-family: "Roboto Regular";
-    src: url(/assets/Roboto/Roboto-Regular.ttf) format("truetype");
+    src: url(../fonts/Roboto/Roboto-Regular.ttf) format("truetype");
     font-weight: normal;
 }
 @font-face {
     font-family: "Roboto Extra Bold";
-    src: url(/assets/Roboto/Roboto-Black.ttf) format("truetype");
+    src: url(../fonts/Roboto/Roboto-Black.ttf) format("truetype");
     font-weight: bolder;
 }
 @font-face {
     font-family: "Roboto Light Italic";
-    src: url(/assets/Roboto/Roboto-LightItalic.ttf) format("truetype");
+    src: url(../fonts/Roboto/Roboto-LightItalic.ttf) format("truetype");
     font-weight: lighter;
 }
-
 
 *,
 *::before,
@@ -37,6 +36,21 @@ body {
     font-family: "Roboto Regular", sans-serif;
     font-size: 18px;
     line-height: 1.25;
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+}
+
+h1 {
+    font-size: 48px;
+    font-family: "Roboto Extra Bold", sans-serif;
+}
+
+h2 {
+    color: #1f2937;
+    font-size: 36px;
+    font-family: "Roboto Extra Bold", sans-serif;
+    margin-block: 20px;
 }
 
 .container {
@@ -70,23 +84,27 @@ header a {
 }
 
 .logo {
+    height: 200px;
     padding-bottom: 20px;
+}
+.logo img {
+    height: 100%;
 }
 
 .logo img, .hero-image img {
     margin-inline: auto;
 }
 
+main {
+    flex: 1;
+}
+
 #hero {
     background-color: #1f2937;
 }
-
 #hero h1 {
     color: #f9faf8;
-    font-size: 48px;
-    font-family: "Roboto Extra Bold", sans-serif;
 }
-
 #hero p {
     color: #e5e7eb;
 }
@@ -100,13 +118,6 @@ header a {
     padding: 30px 20px 0 20px;
 }
 
-#content h2 {
-    color: #1f2937;
-    font-size: 36px;
-    font-family: "Roboto Extra Bold", sans-serif;
-    margin-block: 20px;
-}
-
 .products {
     display: flex;
     flex-wrap: wrap;
@@ -116,11 +127,9 @@ header a {
 .card {
     width: calc(50% - 20px);
 }
-
 .card img {
     margin-bottom: 10px;
 }
-
 .card figcaption {
     text-align: center;
 }
@@ -128,13 +137,11 @@ header a {
 #quote {
     background-color: #e5e7eb;
 }
-
 #quote p {
     color: #1f2937;
     font-size: 36px;
     font-family: "Roboto Light Italic", sans-serif;
 }
-
 #quote cite {
     display: block;
     text-align: right;
@@ -148,21 +155,85 @@ header a {
     display: grid;
     gap: 20px;
 }
-
 .cta-box h4 {
     color: #f9faf8;
     font-size: 24px;
     margin-bottom: 20px;
 }
-
 .cta-box button {
     border: 1px solid #f9faf8;
+}
+
+#sign-up-form {
+    background-color: #e5e7eb;
+    padding: 32px;
+}
+#sign-up-form p {
+    margin-block: 10px;
+}
+
+form {
+    display: grid;
+    background-color: #f9faf8;
+    padding: 32px;
+}
+form label {
+    margin-bottom: 5px;
+}
+form input {
+    padding: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #e5e7eb;
+}
+form textarea {
+    height: 150px;
+    border: 1px solid #e5e7eb;
+    padding: 5px;
+}
+
+.social-login {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    justify-content: center;
+    gap: 10px;
+}
+.social-login p {
+    width: 100%;
+    text-align: center;
+}
+.social-login img{
+    width: 20px;
+}
+
+#sign-up-image {
+    background-color: #3882f6;
+}
+#sign-up-image img{
+    margin-inline: auto;
+}
+
+.map {
+    width: 100%;
+}
+.map iframe {
+    width: 100%;
+    aspect-ratio: 1.3333;
+}
+
+.purchase.odd {
+    background-color: #1f2937;
+}
+.purchase.odd h2 {
+    color: #f9faf8;
+}
+.purchase.odd p {
+    color: #e5e7eb;
 }
 
 footer {
     background-color: #1f2937;
 }
-
 footer p {
     color: #f9faf8;
     text-align: center;
@@ -225,5 +296,46 @@ footer p {
     .cta-box button {
         width: 200px;
         height: 56px;
+    }
+
+    #sign-up-page .container {
+        display: flex;
+    }
+
+    #sign-up-form, #sign-up-image {
+        width: 50%;
+    }
+
+    #contact-page .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 32px;
+    }
+  
+    #contact-page .container h1 {
+        width: 100%;
+    }
+  
+    .map iframe {
+        aspect-ratio: 1.05;
+    }
+  
+    .map, .contact-form {
+        width: calc(50% - 16px);
+    }
+
+    #purchase-page .container {
+        display: flex;
+        gap: 32px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .purchase .section-text {
+        width: 50%;
+    }
+
+    .purchase img {
+        height: 100%;
     }
 }
